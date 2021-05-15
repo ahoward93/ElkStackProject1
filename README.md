@@ -9,7 +9,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the deployment file may be used to install only certain pieces of it, such as Filebeat.
 
-  Playbooks used for project
+  Playbooks used for project (files are saved as .txt as .yml is not supported by git hub)
   Playbook one is used to install docker, apache, python and docker container DVWA on the webserver VMs
   
 [1_RedTeam-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt)
@@ -25,9 +25,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   Playbook 4 is used to download, install, configure and start meticbeat on the webserver VMs 
 
 [4_Metricbeat-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt)
-
-  
-
+ 
   
 
 This document contains the following details:
