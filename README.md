@@ -2,14 +2,19 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![ELK Stack diagram]<img width="854" alt="ELK Stack Diagram" src="https://user-images.githubusercontent.com/76796692/118347386-f9347180-b510-11eb-8ec8-8ab0d94ea383.PNG">
+[ELK Stack diagram] <img width="913" alt="ELKStack_Diagram" src="https://user-images.githubusercontent.com/76796692/118374123-659e8780-b588-11eb-82a5-9a199170fb83.PNG">
+>
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the deployment file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  Playbooks used for project
+<>
+  
+
+  
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
