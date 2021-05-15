@@ -1,3 +1,5 @@
+
+
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
@@ -8,7 +10,15 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the deployment file may be used to install only certain pieces of it, such as Filebeat.
 
   Playbooks used for project
-<>
+  Playbook one is used to install docker, apache, python and docker container DVWA on the webserver VMs
+[1_RedTeam-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt)
+  Playbook two is used to configure the ELKVM with docker, python and docker container module sebp/elk:761
+[2_ELKInstall-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488013/2_ELKInstall-playbook.txt)
+  Playbook 3 is used to download, install, configure and start filebeat on the webserver VMs 
+[3_Filebeat-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488014/3_Filebeat-playbook.txt)
+  Playbook 4 is used to download, install, configure and start meticbeat on the webserver VMs 
+[4_Metricbeat-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt)
+
   
 
   
