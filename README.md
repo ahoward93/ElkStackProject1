@@ -92,7 +92,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Install docker.io
-- Install pyyhon2-pip
+- Install python2-pip
 - Increase memory 
 - Run sebp/elk:761 container and specify published ports 
 
@@ -100,16 +100,22 @@ The following screenshot displays the result of running `docker ps` after succes
 
 <img width="546" alt="ELK docker install" src="https://user-images.githubusercontent.com/76796692/118411421-702d4f80-b662-11eb-9dfd-7fb7af727b5d.PNG">
 
-
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+
+| Name         | Private IP Addresses|
+|--------------|---------------------|
+| Web 1        | 10.0.0.7            |
+| Web 2        | 10.0.0.8            |
+| Web 3        | 10.0.0.9            |
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+Filebeat
+Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+-Filebeat
+-Metricbeat`Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
