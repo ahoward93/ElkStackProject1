@@ -47,23 +47,25 @@ Load balancers allow traffic to be spread accross multiple machines giving the u
 
 What is the advantage of a jump box?
 
-The jump box with docker and ansible installed provide us an administration machine.  This administration machine allows us to deploy new applications and container modules as well as update all of our machines simultaniously.  The jump box also alows for their to be limited interaction between the public internet and the virtual machines. 
+The jump box with docker and ansible installed provide us an administration machine.  This administration machine allows us to deploy new applications and container modules as well as update all of our machines simultaniously.  The jump box also alows for there to be limited interaction between the public internet and the virtual machines. 
 
 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the network and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the applications and system logs.
+
+What does Filebeat watch for?  Filebeat watches for log files, it collects the log events and forwards them for indexing. 
+
+What does Metricbeat record? Metricbeat collects metrics from the operating system and from servies running on the server. 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name      | Function       | IP Address | Operating System |
+|---------- |--------------- |------------|------------------|
+| Jump Box  | Gateway        | 10.0.0.4   | Linux            |
+| Web 1     | Webserver      | 10.0.0.7   | Linux            |
+| Web 2     | Webserver      | 10.0.0.8   | Linux            |
+| Web 3     | Webserver      | 10.0.0.9   | Linux            |
+| ELK Stack | System Monitor | 10.2.0.4   | Linux            |
 
 ### Access Policies
 
