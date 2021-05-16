@@ -49,8 +49,6 @@ What is the advantage of a jump box?
 
 The jump box with docker and ansible installed provide us an administration machine.  This administration machine allows us to deploy new applications and container modules as well as update all of our machines simultaniously.  The jump box also alows for there to be limited interaction between the public internet and the virtual machines. 
 
-
-
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the applications and system logs.
 
 What does Filebeat watch for?  Filebeat watches for log files, it collects the log events and forwards them for indexing. 
@@ -62,28 +60,31 @@ The configuration details of each machine may be found below.
 | Name      | Function       | IP Address | Operating System |
 |---------- |--------------- |------------|------------------|
 | Jump Box  | Gateway        | 10.0.0.4   | Linux            |
-| Web 1     | Webserver      | 10.0.0.7   | Linux            |
-| Web 2     | Webserver      | 10.0.0.8   | Linux            |
-| Web 3     | Webserver      | 10.0.0.9   | Linux            |
+| Web 1     | VM             | 10.0.0.7   | Linux            |
+| Web 2     | VM             | 10.0.0.8   | Linux            |
+| Web 3     | VM             | 10.0.0.9   | Linux            |
 | ELK Stack | System Monitor | 10.2.0.4   | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+99.36.181.143.  
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the jumpbox via SSH port 22 from the whitelisted IP address 99.36.181.143. The jumpbox can also access the ELK VM.  The load balancer is also exposed to the public internet. 
+
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name         | Publicly Accessible | Allowed IP Addresses   |
+|--------------|---------------------|------------------------|
+| Jump Box     | NO                  | 10.0.0.4/52.188.65.205 |
+| Web 1        | No                  | 10.0.0.7               |
+| Web 2        | No                  | 10.0.0.8               |
+| Web 3        | No                  | 10.0.0.9               |
+| ELK VM       | No                  | 10.2.0.4/104.214.68.93 |
+|Load Balancer | Yes                 | 40.117.158.16          |
 
 ### Elk Configuration
 
