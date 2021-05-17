@@ -138,19 +138,35 @@ SSH into the control node and follow the steps below:
 ### Useful commands
 -Run from inside ansible container /etc/ansible/files
 -pulls from github into /etc/ansible/files (make a files directory if you don't have one already
+
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt
+
 -renames txt file to yml file
+
 mv 1_RedTeam-playbook.txt RedTeam-playbook.yml
+
 -pulls from github elk install playbook
+
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488013/2_ELKInstall-playbook.txt
+
 -rename to yml file 
+
 mv 2_ELKInstall-playbook.txt ELKInstall-playbook.yml
+
 -pulls from github filebeat playbook
+
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488014/3_Filebeat-playbook.txt
+
 -rename to yml file
+
 mv 3_Filebeat-playbook.txt Filebeat-playbook.yml
+
 -pulls freom github metricbeat playbook
+
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt
+
 -rename to yml file 
+
 mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
+
 -To run the playbook you want by using the command ansible-playbook playbookname.yml
