@@ -1,5 +1,3 @@
-
-
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
@@ -9,20 +7,21 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the deployment file may be used to install only certain pieces of it, such as Filebeat.
 
-  Playbooks used for project (files are saved as .txt as .yml is not supported by git hub)
-  Playbook one is used to install docker, apache, python and docker container DVWA on the webserver VMs
+  Playbooks used for the project are saved as .txt as .yml is not supported by git hub to deploy the files you will need to change the file extension back to .yml when saving onto the Linux box.  
+
+Playbook one is used to install docker, apache, python, and docker container DVWA on the webserver VMs
   
 [1_RedTeam-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt)
   
-  Playbook two is used to configure the ELKVM with docker, python and docker container module sebp/elk:761
+Playbook two is used to configure the ELKVM with docker, python, and docker container module sebp/elk:761
   
 [2_ELKInstall-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488013/2_ELKInstall-playbook.txt)
   
-  Playbook 3 is used to download, install, configure and start filebeat on the webserver VMs 
+Playbook 3 is used to download, install, configure and start filebeat on the webserver VMs 
 
 [3_Filebeat-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488014/3_Filebeat-playbook.txt)
   
-  Playbook 4 is used to download, install, configure and start meticbeat on the webserver VMs 
+Playbook 4 is used to download, install, configure and start meticbeat on the webserver VMs 
 
 [4_Metricbeat-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt)
  
@@ -41,21 +40,22 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+Load balancing ensures that the application will be highly available and restrict access to the network.
 What aspect of security do load balancers protect? 
-Load balancers allow traffic to be spread accross multiple machines giving the users a highly available application, because of the load balancer working accross multiple machines we have redundency if a machine needs to be brought down for maintenance.   We also have the ability to accomidated increased traffic which could be from a denial of service attack or an increase in customer traffic.  
+Load balancers allow traffic to be spread across multiple machines giving the users a highly available application, because of the load balancer working across multiple machines we have redundancy if a machine needs to be brought down for maintenance.   We also can accommodate increased traffic, which could be from a denial of service attack or an increase in customer traffic.  
 
 What is the advantage of a jump box?
 
-The jump box with docker and ansible installed provide us an administration machine.  This administration machine allows us to deploy new applications and container modules as well as update all of our machines simultaniously.  The jump box also alows for there to be limited interaction between the public internet and the virtual machines. 
+The jump box with docker and ansible installed provides us an administration machine.  This administration machine allows us to deploy new applications and container modules as well as update all of our machines simultaneously.  The jump box also allows for there to be limited interaction between the public internet and the virtual machines. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the applications and system logs.
 
 What does Filebeat watch for?  Filebeat watches for log files, it collects the log events and forwards them for indexing. 
 
-What does Metricbeat record? Metricbeat collects metrics from the operating system and from servies running on the server. 
+What does Metricbeat record? Metricbeat collects metrics from the operating system and the services running on the server. 
 
 The configuration details of each machine may be found below.
+
 
 | Name      | Function       | IP Address | Operating System |
 |---------- |--------------- |------------|------------------|
@@ -72,10 +72,11 @@ The machines on the internal network are not exposed to the public Internet.
 Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 99.36.181.143.  
 
-Machines within the network can only be accessed by the jumpbox via SSH port 22 from the whitelisted IP address 99.36.181.143. The jumpbox can also access the ELK VM.  The load balancer is also exposed to the public internet. 
+Machines within the network can only be accessed by the jump box via SSH port 22 from the whitelisted IP address 99.36.181.143. The jump box can also access the ELK VM.  The load balancer is also exposed to the public internet. 
 
 
 A summary of the access policies in place can be found in the table below.
+
 
 | Name         | Publicly Accessible | Allowed IP Addresses   |
 |--------------|---------------------|------------------------|
@@ -88,7 +89,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it provides a one step deployment for the ELK VM.  It also alows for you to recreate the deployment as needed on other machines. 
+Ansible was used to automate the configuration of the ELK machine. No configuration was performed manually, which is advantageous because it provides a one-step deployment for the ELK VM.  It also allows you to recreate the deployment as needed on other machines. 
 
 The playbook implements the following tasks:
 - Install docker.io
@@ -118,16 +119,19 @@ These Beats allow us to collect the following information from each machine:
 -Metricbeat`Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 ### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+To use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the ELKInstall-playbook.yml file to .
-- Update the _____ file to include...
-- Run the playbook by using the following code ansible-playbook ELKInstall-playbook.yml and navigate to ____ to check that the installation worked as expected.
+- Copy the ELKInstall-playbook.yml file to the directory /etc/ansible on your jump box.
+- Update the host file to include your Webserver VM private IP addresses and  ELK VM private IP address see the example below:
+      [webservers] ##needed for the RedTeam, filebeat, and metricbeat playbooks
+      10.0.0.7 ansible_python_interpreter=/usr/bin/python3 
+      10.0.0.8 ansible_python_interpreter=/usr/bin/python3
+      10.0.0.9 ansible_python_interpreter=/usr/bin/python3
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+       [elk] ##needed for the ElkInstall playbook
+       10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Run the playbook by using the following code ansible-playbook ELKInstall-playbook.yml and navigate to your ELK VM through SSH to check that the installation worked as expected.
+-Run sudo docker ps 
+-Navigate to your ELK server public IP address followed by :5601/app.kibana#home to confirm the ELK Server is running http://104.214.68.93:5601/app/kibana#/home
