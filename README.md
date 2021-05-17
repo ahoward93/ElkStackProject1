@@ -43,8 +43,6 @@ Metricbeat-config is used in Metricbeat playbook.  Make changes to line 62 & 94 
  
 
 
-
-
 This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -163,39 +161,39 @@ ansible-playbook ELKInstall-playbook.yml
 - Navigate to your ELK server <http://ELKPublicIP:5601/app.kibana#home> to confirm the ELK Server is running 
 ### Useful commands
 - Run from inside ansible container /etc/ansible/files
+
 - Pulls from github into /etc/ansible/files (make a files directory if you don't have one already
 
-curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt
-
-- Renames txt file to yml file
-
-mv 1_RedTeam-playbook.txt RedTeam-playbook.yml
+  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt
 
 - Pulls from github elk install playbook
 
-curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488013/2_ELKInstall-playbook.txt
-
-- Rename to yml file 
-
-mv 2_ELKInstall-playbook.txt ELKInstall-playbook.yml
+  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488013/2_ELKInstall-playbook.txt
 
 - Pulls from github filebeat playbook
 
-curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488014/3_Filebeat-playbook.txt
-
-- Rename to yml file
-
-mv 3_Filebeat-playbook.txt Filebeat-playbook.yml
+  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488014/3_Filebeat-playbook.txt
 
 - Pulls freom github metricbeat playbook
 
-curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt
+  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt
 
-- Rename to yml file 
+- Pulls filebeat-config file needed before you can run 3_Filebeat-playbook 
 
-mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
+  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6497078/5_filebeat-config.txt 
 
--Pulls 
+- Pulls metricbeat-config file needed before you can run 4_Metricbeat-playbook
 
-- To run the playbook you want by using the command ansible-playbook playbookname.yml
-ansible-playbook name of playbook.yml
+  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6497080/6_metricbeat_config.txt   
+
+- Rename txt to yml file 
+   - mv 1_RedTeam-playbook.txt RedTeam-playbook.yml
+   - mv 2_ELKInstall-playbook.txt ELKInstall-playbook.yml
+   - mv 3_Filebeat-playbook.txt Filebeat-playbook.yml
+   - mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
+   - mv 5_filebeat-config.txt filebeat-config.yml
+   - mv 6_metricbeat_config.txt metricbeat_config.txt 
+   
+- To run the playbook you want by using the ansible command
+   - ansible-playbook playbookname.yml
+
