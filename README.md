@@ -4,9 +4,10 @@ The files in this repository were used to configure the network depicted below.
 
 ELK Stack diagram from Azure Topology <img width="913" alt="ELKStack_Diagram" src="https://user-images.githubusercontent.com/76796692/118374123-659e8780-b588-11eb-82a5-9a199170fb83.PNG">
 >
-ELK Stack Network diagram
 
- < ![_ELK2Diagram](https://user-images.githubusercontent.com/76796692/118522134-bbe70400-b709-11eb-8360-a7273a693dc5.png) >
+ ELK Network Diagram
+ ![](https://user-images.githubusercontent.com/76796692/118560672-dd5ee480-b737-11eb-8a06-fff0244036e7.png)
+
 
 
 
@@ -30,8 +31,19 @@ Playbook 3 is used to download, install, configure and start filebeat on the web
 Playbook 4 is used to download, install, configure and start meticbeat on the webserver VMs 
 
 [4_Metricbeat-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt)
+
+Filebeat-Config is used in Filebeat playbook. Make changes to line number 1105 & 1805 save in container on jump box /etc/ansible/files/filebeat-config.yml
  
-  
+[5_filebeat-config.txt](https://github.com/ahoward93/ElkStackProject1/files/6497078/5_filebeat-config.txt)
+ 
+Metricbeat-config is used in Metricbeat playbook.  Make changes to line 62 & 94 save in container on jump box /etc/ansible/files/metircbeat-config.yml
+ 
+[6_metricbeat_config.txt](https://github.com/ahoward93/ElkStackProject1/files/6497080/6_metricbeat_config.txt)
+
+ 
+
+
+
 
 This document contains the following details:
 - Description of the Topology
@@ -43,6 +55,7 @@ This document contains the following details:
 
 
 ### Description of the Topology
+
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
