@@ -130,6 +130,7 @@ To use the playbook, you will need to have an Ansible control node already confi
 SSH into the control node and follow the steps below:
 - Copy the ELKInstall-playbook.yml file to the directory /etc/ansible/files on your jump box. (make a files directory if you do not already have one)
 - Update the host file to include your Webserver VM private IP addresses and  ELK VM private IP address see the example below:
+      
       [webservers] ##needed for the RedTeam, filebeat, and metricbeat playbooks
       10.0.0.7 ansible_python_interpreter=/usr/bin/python3 
       10.0.0.8 ansible_python_interpreter=/usr/bin/python3
@@ -138,41 +139,48 @@ SSH into the control node and follow the steps below:
        [elk] ##needed for the ElkInstall playbook
        10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 
-- Run the playbook by using the following code ansible-playbook ELKInstall-playbook.yml and navigate to your ELK VM through SSH to check that the installation worked as expected.
--Run sudo docker ps 
--Navigate to your ELK server public IP address followed by :5601/app.kibana#home to confirm the ELK Server is running http://104.214.68.93:5601/app/kibana#/home
+- Run the playbook by using the following code  
+
+ansible-playbook ELKInstall-playbook.yml 
+
+- Navigate to your ELK VM through SSH 
+
+- Run sudo docker ps to check that the installation worked as expected
+
+- Navigate to your ELK server <http://ELKPublicIP:5601/app.kibana#home> to confirm the ELK Server is running 
 ### Useful commands
--Run from inside ansible container /etc/ansible/files
--pulls from github into /etc/ansible/files (make a files directory if you don't have one already
+- Run from inside ansible container /etc/ansible/files
+- Pulls from github into /etc/ansible/files (make a files directory if you don't have one already
 
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt
 
--renames txt file to yml file
+- Renames txt file to yml file
 
 mv 1_RedTeam-playbook.txt RedTeam-playbook.yml
 
--pulls from github elk install playbook
+- Pulls from github elk install playbook
 
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488013/2_ELKInstall-playbook.txt
 
--rename to yml file 
+- Rename to yml file 
 
 mv 2_ELKInstall-playbook.txt ELKInstall-playbook.yml
 
--pulls from github filebeat playbook
+- Pulls from github filebeat playbook
 
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488014/3_Filebeat-playbook.txt
 
--rename to yml file
+- Rename to yml file
 
 mv 3_Filebeat-playbook.txt Filebeat-playbook.yml
 
--pulls freom github metricbeat playbook
+- Pulls freom github metricbeat playbook
 
 curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt
 
--rename to yml file 
+- Rename to yml file 
 
 mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
 
--To run the playbook you want by using the command ansible-playbook playbookname.yml
+- To run the playbook you want by using the command ansible-playbook playbookname.yml
+ansible-playbook name of playbook.yml
