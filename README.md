@@ -195,5 +195,7 @@ curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbea
 
 mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
 
+-Pulls 
+
 - To run the playbook you want by using the command ansible-playbook playbookname.yml
 ansible-playbook name of playbook.yml
