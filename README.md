@@ -2,7 +2,8 @@
 
 The files in this repository were used to configure the network depicted below.
 
-ELK Stack diagram from Azure Topology <img width="913" alt="ELKStack_Diagram" src="https://user-images.githubusercontent.com/76796692/118374123-659e8780-b588-11eb-82a5-9a199170fb83.PNG">
+ELK Stack diagram from Azure Topology showing all components of the cloud setup
+<img width="913" alt="ELKStack_Diagram" src="https://user-images.githubusercontent.com/76796692/118374123-659e8780-b588-11eb-82a5-9a199170fb83.PNG">
 >
 
  ELK Network Diagram
@@ -14,7 +15,7 @@ ELK Stack diagram from Azure Topology <img width="913" alt="ELKStack_Diagram" sr
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the deployment file may be used to install only certain pieces of it, such as Filebeat.
 
-  Playbooks used for the project are saved as .txt as .yml is not supported by git hub to deploy the files you will need to change the file extension back to .yml when saving onto the Linux box.  
+Playbooks used for the project are saved as .txt as .yml is not supported by git hub to deploy the files you will need to change the file extension back to .yml when saving onto the Linux box.  For ease of use rename scripts can be foujdn at the bottom of this page.    
 
 Playbook one is used to install docker, apache, python, and docker container DVWA on the webserver VMs
   
@@ -59,7 +60,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available and restrict access to the network.
 What aspect of security do load balancers protect? 
-Load balancers allow traffic to be spread across multiple machines giving the users a highly available application, because of the load balancer working across multiple machines we have redundancy if a machine needs to be brought down for maintenance.   We also can accommodate increased traffic, which could be from a denial of service attack or an increase in customer traffic.  
+Load balancers allow traffic to be spread across multiple machines giving the users a highly available application, because of the load balancer working across multiple machines we have redundancy if a machine needs to be brought down for maintenance.  We also can accommodate increased traffic, which could be from a denial of service attack or an increase in customer traffic.  In this example there are 3 vm machines, you can create as many vm machines as needed for your enviorment or budget.     
 
 What is the advantage of a jump box?
 
@@ -86,7 +87,7 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the jump box machine can accept connections from the internet. Access to this machine is only allowed from the following IP addresses:
 99.36.181.143.  
 
 Machines within the network can only be accessed by the jump box via SSH port 22 from the whitelisted IP address 99.36.181.143. The jump box can also access the ELK VM.  The load balancer is also exposed to the public internet. 
@@ -132,8 +133,8 @@ Filebeat
 Metricbeat
 
 These Beats allow us to collect the following information from each machine:
--Filebeat
--Metricbeat`Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat is a log shipper that forwards and centralizes log data
+- Metricbeat is a log shipper installed on your servers to periodically collect metrics from the operating system and from services running on the server
 
 ### Using the Playbook
 To use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -178,11 +179,11 @@ ansible-playbook ELKInstall-playbook.yml
 
   curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt
 
-- Pulls filebeat-config file needed before you can run 3_Filebeat-playbook 
+- Pulls filebeat-config file needed before you can run 3_Filebeat-playbook (Remember to change to your ip address)
 
   curl -LO https://github.com/ahoward93/ElkStackProject1/files/6497078/5_filebeat-config.txt 
 
-- Pulls metricbeat-config file needed before you can run 4_Metricbeat-playbook
+- Pulls metricbeat-config file needed before you can run 4_Metricbeat-playbook (Remember to changes to your ip address)
 
   curl -LO https://github.com/ahoward93/ElkStackProject1/files/6497080/6_metricbeat_config.txt   
 
@@ -193,7 +194,8 @@ ansible-playbook ELKInstall-playbook.yml
    - mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
    - mv 5_filebeat-config.txt filebeat-config.yml
    - mv 6_metricbeat_config.txt metricbeat_config.txt 
-   
+ 
+  
 - To run the playbook you want by using the ansible command
    - ansible-playbook playbookname.yml
 
