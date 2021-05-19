@@ -188,14 +188,26 @@ ansible-playbook ELKInstall-playbook.yml
   curl -LO https://github.com/ahoward93/ElkStackProject1/files/6497080/6_metricbeat_config.txt   
 
 - Rename txt to yml file 
-   - mv 1_RedTeam-playbook.txt RedTeam-playbook.yml
-   - mv 2_ELKInstall-playbook.txt ELKInstall-playbook.yml
-   - mv 3_Filebeat-playbook.txt Filebeat-playbook.yml
-   - mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
-   - mv 5_filebeat-config.txt filebeat-config.yml
-   - mv 6_metricbeat_config.txt metricbeat_config.txt 
+    mv 1_RedTeam-playbook.txt RedTeam-playbook.yml
+    mv 2_ELKInstall-playbook.txt ELKInstall-playbook.yml
+    mv 3_Filebeat-playbook.txt Filebeat-playbook.yml
+    mv 4_Metricbeat-playbook.txt Metricbeat-playbook.yml
+    mv 5_filebeat-config.txt filebeat-config.yml
+    mv 6_metricbeat_config.txt metricbeat_config.txt 
  
+- Helpful Container code
+  -  list container
+  
+     sudo docker container list -a
+    
+  -  start container
+  
+     sudo docker container start (container name or container id)
+  
+  -  attach container    (container name or container id)
+  
+     sudo docker container attach (container name or container id)
   
 - To run the playbook you want by using the ansible command
-   - ansible-playbook playbookname.yml
+    ansible-playbook playbookname.yml
 
