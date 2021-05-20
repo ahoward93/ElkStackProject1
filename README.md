@@ -24,27 +24,23 @@ Playbook one is used to install docker, apache, python, and docker container DVW
 Playbook two is used to configure the ELKVM with docker, python, and docker container module sebp/elk:761
 
 [2_ELKInstall-playbook.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files2_ELKInstall-playbook.yml)
-  
-  
+    
 Playbook 3 is used to download, install, configure and start filebeat on the webserver VMs 
 
-[3_Filebeat-playbook.yml]
+[3_Filebeat-playbook.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/3_Filebeat-playbook.yml)
   
 Playbook 4 is used to download, install, configure and start meticbeat on the webserver VMs 
 
-[2_ELKInstall-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6512368/2_ELKInstall-playbook.txt)
-
-4_Metricbeat-playbook.yml
+[4_Metricbeat-playbook.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/4_Metricbeat-playbook.yml)
 
 Filebeat-Config is used in Filebeat playbook. Make changes to line number 1105 & 1805 save in container on jump box /etc/ansible/files/filebeat-config.yml
  
-5_filebeat-config.yml
+[5_filebeat-config.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/5_filebeat-config.yml)
  
 Metricbeat-config is used in Metricbeat playbook.  Make changes to line 62 & 94 save in container on jump box /etc/ansible/files/metircbeat-config.yml
  
-6_metricbeat_config.yml
+[6_metricbeat_config.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/6_metricbeat_config.yml)
  
-
 
 This document contains the following details:
 - Description of the Topology
