@@ -19,7 +19,7 @@ Playbooks used for the project are saved in the Ansbile Folder in this repositor
 
 Playbook one is used to install docker, apache, python, and docker container DVWA on the webserver VMs
   
-1_RedTeam-playbook.yml
+[1_RedTeam-playbook.yml] https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/1_RedTeam-playbook.yml
   
 Playbook two is used to configure the ELKVM with docker, python, and docker container module sebp/elk:761
   
@@ -164,27 +164,27 @@ ansible-playbook ELKInstall-playbook.yml
 
 - Pulls from github into /etc/ansible/files (make a files directory if you don't have one already
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488011/1_RedTeam-playbook.txt
+  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/1_RedTeam-playbook.yml
 
 - Pulls from github elk install playbook
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488013/2_ELKInstall-playbook.txt
+  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/2_ELKInstall-playbook.yml
 
 - Pulls from github filebeat playbook
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488014/3_Filebeat-playbook.txt
+  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/3_Filebeat-playbook.yml
 
 - Pulls freom github metricbeat playbook
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6488015/4_Metricbeat-playbook.txt
+  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/4_Metricbeat-playbook.yml
 
 - Pulls filebeat-config file needed before you can run 3_Filebeat-playbook (Remember to change to your ip address)
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6497078/5_filebeat-config.txt 
+  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/5_filebeat-config.yml
 
 - Pulls metricbeat-config file needed before you can run 4_Metricbeat-playbook (Remember to changes to your ip address)
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/files/6497080/6_metricbeat_config.txt   
+  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/6_metricbeat_config.yml
  
 - Helpful Container code
   -  list container
