@@ -19,17 +19,20 @@ Playbooks used for the project are saved in the Ansbile Folder in this repositor
 
 Playbook one is used to install docker, apache, python, and docker container DVWA on the webserver VMs
   
-[1_RedTeam-playbook.yml] https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/1_RedTeam-playbook.yml
+[1_RedTeam-playbook.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/1_RedTeam-playbook.yml)
   
 Playbook two is used to configure the ELKVM with docker, python, and docker container module sebp/elk:761
+
+[2_ELKInstall-playbook.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files2_ELKInstall-playbook.yml)
   
-2_ELKInstall-playbook.yml
   
 Playbook 3 is used to download, install, configure and start filebeat on the webserver VMs 
 
-3_Filebeat-playbook.yml
+[3_Filebeat-playbook.yml]
   
 Playbook 4 is used to download, install, configure and start meticbeat on the webserver VMs 
+
+[2_ELKInstall-playbook.txt](https://github.com/ahoward93/ElkStackProject1/files/6512368/2_ELKInstall-playbook.txt)
 
 4_Metricbeat-playbook.yml
 
