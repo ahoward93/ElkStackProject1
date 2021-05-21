@@ -164,41 +164,41 @@ ansible-playbook ELKInstall-playbook.yml
 
 - Pulls from github into /etc/ansible/files (make a files directory if you don't have one already
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/1_RedTeam-playbook.yml
+  ```curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/1_RedTeam-playbook.yml ```
 
 - Pulls from github elk install playbook
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/2_ELKInstall-playbook.yml
+  ```curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/2_ELKInstall-playbook.yml```
 
 - Pulls from github filebeat playbook
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/3_Filebeat-playbook.yml
+  ```curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/3_Filebeat-playbook.yml```
 
 - Pulls freom github metricbeat playbook
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/4_Metricbeat-playbook.yml
+  ```curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/4_Metricbeat-playbook.yml```
 
 - Pulls filebeat-config file needed before you can run 3_Filebeat-playbook (Remember to change to your ip address)
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/5_filebeat-config.yml
+  ```curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/5_filebeat-config.yml```
 
 - Pulls metricbeat-config file needed before you can run 4_Metricbeat-playbook (Remember to changes to your ip address)
 
-  curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/6_metricbeat_config.yml
+  ```curl -LO https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/6_metricbeat_config.yml```
  
 - Helpful Container code
   -  list container
   
-     sudo docker container list -a
+     ```sudo docker container list -a```
     
   -  start container
   
-     sudo docker container start (container name or container id)
+    ```sudo docker container start (container name or container id)```
   
   -  attach container    (container name or container id)
   
-     sudo docker container attach (container name or container id)
+     ```sudo docker container attach (container name or container id)```
   
 - To run the playbook you want by using the ansible command
-    ansible-playbook playbookname.yml
+    ```ansible-playbook playbookname.yml```
 
