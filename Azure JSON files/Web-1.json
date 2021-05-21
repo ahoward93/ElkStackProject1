@@ -1,0 +1,94 @@
+{
+    "name": "Web-1",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Web-1",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "eastus",
+    "properties": {
+        "vmId": "d22a37d8-aa11-446d-92f7-e477d982e962",
+        "availabilitySet": {
+            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Compute/availabilitySets/REDTEAMAS"
+        },
+        "hardwareProfile": {
+            "vmSize": "Standard_B1ms"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "Canonical",
+                "offer": "UbuntuServer",
+                "sku": "18.04-LTS",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "Web-1_OsDisk_1_5235553ea91a45caa51d77a0d409d34f",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/disks/Web-1_OsDisk_1_5235553ea91a45caa51d77a0d409d34f"
+                },
+                "diskSizeGB": 30
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "Web-1",
+            "adminUsername": "azadmin",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": true,
+                "ssh": {
+                    "publicKeys": [
+                        {
+                            "path": "/home/azadmin/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5+pJn+tohLnBS9n90fmZsbPXYUl6Lk92U2RAVvH038RHkr19nxln31k2puvJblr23Kmg7aYADajyzlOwSusJJfV7p1qcrAyUtxUVCPcN4EjSjOFMIJW8789PDK40N7YWaFzcUDfdLXH1LKa62WVutzWJK4bBMZiGe3S63xvgGbrliH9Q9PwvOqgfLfY9enoTB45KMq6Hca3uSHeVR6xbLIOUGVjFet4oTBIvBn2T4yxrMiGnxQyG8sWY4AN9gWBRPblWHJstxdL61U8w1qPfPmkUIGkTpbkThp5b/N4qC5RU2OhyHWwaRhsS+4/w2JCHEkfxNBxc/2N/FJM4wyirkhbB9gKS9l50vVO28BjEFTuaZGCPxjyGZX1SZHjKprxqkplPHbylmJlZzJ2MwtnqljQWoOLEOkCgXXZSXywSP2yK4IOqYuKc7lj/9USJerlT1DsFQpE/BUtClGML+PUoH8dLSHVAY5TbnffcC/w3PFwlF7f8wSdmbsMXzJlIYCSc= Abby@DESKTOP-89PL6RN"
+                        }
+                    ]
+                }
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-1959"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    },
+    "resources": [
+        {
+            "name": "AzureNetworkWatcherExtension",
+            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Web-1/extensions/AzureNetworkWatcherExtension",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "eastus",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.Azure.NetworkWatcher",
+                "type": "NetworkWatcherAgentLinux",
+                "typeHandlerVersion": "1.4",
+                "settings": {}
+            }
+        },
+        {
+            "name": "enablevmaccess",
+            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Web-1/extensions/enablevmaccess",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "eastus",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "VMAccessForLinux",
+                "typeHandlerVersion": "1.4",
+                "settings": {}
+            }
+        }
+    ]
+}

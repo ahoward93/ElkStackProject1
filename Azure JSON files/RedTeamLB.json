@@ -1,0 +1,110 @@
+{
+    "name": "RedTeamLB",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB",
+    "etag": "W/\"084565ef-a9c9-4413-b47a-a4c7a295874f\"",
+    "type": "Microsoft.Network/loadBalancers",
+    "location": "eastus",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "faca8492-8e83-4d9a-a58e-8d2aa373a645",
+        "frontendIPConfigurations": [
+            {
+                "name": "LoadBalancerFrontEnd",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/frontendIPConfigurations/LoadBalancerFrontEnd",
+                "etag": "W/\"084565ef-a9c9-4413-b47a-a4c7a295874f\"",
+                "type": "Microsoft.Network/loadBalancers/frontendIPConfigurations",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "privateIPAllocationMethod": "Dynamic",
+                    "publicIPAddress": {
+                        "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/publicIPAddresses/RedTeamLB2"
+                    },
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/loadBalancingRules/RedTeamLBRule"
+                        }
+                    ]
+                }
+            }
+        ],
+        "backendAddressPools": [
+            {
+                "name": "RedTeamBP",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/backendAddressPools/RedTeamBP",
+                "etag": "W/\"084565ef-a9c9-4413-b47a-a4c7a295874f\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "backendIPConfigurations": [
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-1959/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-3403/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-2448/ipConfigurations/ipconfig1"
+                        }
+                    ],
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/loadBalancingRules/RedTeamLBRule"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/loadBalancers/backendAddressPools"
+            }
+        ],
+        "loadBalancingRules": [
+            {
+                "name": "RedTeamLBRule",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/loadBalancingRules/RedTeamLBRule",
+                "etag": "W/\"084565ef-a9c9-4413-b47a-a4c7a295874f\"",
+                "type": "Microsoft.Network/loadBalancers/loadBalancingRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "frontendIPConfiguration": {
+                        "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/frontendIPConfigurations/LoadBalancerFrontEnd"
+                    },
+                    "frontendPort": 80,
+                    "backendPort": 80,
+                    "enableFloatingIP": false,
+                    "idleTimeoutInMinutes": 4,
+                    "protocol": "Tcp",
+                    "loadDistribution": "SourceIPProtocol",
+                    "backendAddressPool": {
+                        "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/backendAddressPools/RedTeamBP"
+                    },
+                    "probe": {
+                        "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/probes/RedTeamHP2"
+                    }
+                }
+            }
+        ],
+        "probes": [
+            {
+                "name": "RedTeamHP2",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/probes/RedTeamHP2",
+                "etag": "W/\"084565ef-a9c9-4413-b47a-a4c7a295874f\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "Tcp",
+                    "port": 80,
+                    "intervalInSeconds": 5,
+                    "numberOfProbes": 2,
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/loadBalancers/RedTeamLB/loadBalancingRules/RedTeamLBRule"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/loadBalancers/probes"
+            }
+        ],
+        "inboundNatRules": [],
+        "inboundNatPools": []
+    },
+    "sku": {
+        "name": "Basic"
+    }
+}

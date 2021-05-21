@@ -1,0 +1,80 @@
+{
+    "name": "Web-3",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Web-3",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "eastus",
+    "properties": {
+        "vmId": "cb19d066-619e-47a1-95fc-197184a932b9",
+        "availabilitySet": {
+            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Compute/availabilitySets/REDTEAMAS"
+        },
+        "hardwareProfile": {
+            "vmSize": "Standard_B1ms"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "Canonical",
+                "offer": "UbuntuServer",
+                "sku": "18.04-LTS",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "Web-3_OsDisk_1_807e03bd977e455fb4f4ad8f939e87c9",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/disks/Web-3_OsDisk_1_807e03bd977e455fb4f4ad8f939e87c9"
+                },
+                "diskSizeGB": 30
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "Web-3",
+            "adminUsername": "azadmin",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": true,
+                "ssh": {
+                    "publicKeys": [
+                        {
+                            "path": "/home/azadmin/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDx8NDNI1ri9HzhCdGY+e5CdHRmOVFWLbKr7gizH+NbBafBkSioGGy63lm7Bs7vYdALU42mPLO2+yIQuHU9CUjS6FDf9mbF3ej4aM/AdrbpRwFG2AR3tHbbDFVLTJArAAwt6cxf+DLyfJRLYoeAaG+EX+pibrm4fYCVhW3+2LjAf5mhVPA00zpPUmdpvZ0zAp6dLd9UZFlyYv0nI5bpYosIks7ZdxZfzdHM7hve3CjrHl7TIiPcmIYwyb3yFeVuF3ZIOi6d2aO/AU1ub9jU2jzwH2Gt+LqrhFYhI5mFqrJt0hZMfls9D3Y4iZzCyZ2g8GCnqe3Ga6De1vw9zcmWCHnH root@4118e66316fa"
+                        }
+                    ]
+                }
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-3403"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    },
+    "resources": [
+        {
+            "name": "enablevmaccess",
+            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Compute/virtualMachines/Web-3/extensions/enablevmaccess",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "eastus",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "VMAccessForLinux",
+                "typeHandlerVersion": "1.4",
+                "settings": {}
+            }
+        }
+    ]
+}
