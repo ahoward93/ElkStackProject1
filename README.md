@@ -1,3 +1,4 @@
+
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
@@ -7,7 +8,7 @@ ELK Stack diagram from Azure Topology showing all components of the cloud setup
 >
 
  ELK Network Diagram
- ![](https://user-images.githubusercontent.com/76796692/118560672-dd5ee480-b737-11eb-8a06-fff0244036e7.png)
+ ![](https://user-images.githubusercontent.com/76796692/119196959-08f20f80-ba55-11eb-98a9-418d369d3a6b.png)
 
 
 
