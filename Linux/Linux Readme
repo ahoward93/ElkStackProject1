@@ -1,0 +1,12 @@
+The two shell scripts were used as part of a project that required the students to build a shell script that would allow the user to input arguments against a data set.
+
+The output for roulette_dealer_finder_by_time.sh will be the name of the roulette dealer when the user supplies two arguments.  
+Time with AM/PM and the date in four digit format
+Argument 1 in string  example '08:00:00 AM'
+Argument 2 as integer 0310
+
+The output for roulette_dealer_finder_by_time_and_game.sh will be the time and name of the dealer
+The script requires 3 arguments  
+Argument 1 pulls the date and AM PM as string example for syntax is '01:00:00 PM' 
+Argument 2 is the four digit number for the  date of the file example  0310
+Argument 3  you will need to provide the column number for the game $2, $3 or $4
