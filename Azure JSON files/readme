@@ -1,1 +1,16 @@
+Deploy in the following order
+RedTeam resource group
+RedTeamVnet
+RedTeam Firewall
+JumpBox
+Web-1
+Web-2
+Web-3
+RedTeam LoadBalancer
+
+ELKStack resource group
+ELKStack Vnet 
+ELKStack VM 
+ELKStack Firewall
+
 
