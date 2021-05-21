@@ -1,0 +1,216 @@
+{
+    "name": "ELKStack-nsg",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg",
+    "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "location": "southcentralus",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "edfe206f-b93b-481f-9086-6ce3b7c5992e",
+        "securityRules": [
+            {
+                "name": "SSH",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/securityRules/SSH",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "TCP",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "22",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 300,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "ELKAllow",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/securityRules/ELKAllow",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow ELK to use public IP address",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "184.58.95.66",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 100,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "whitelistky",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/securityRules/whitelistky",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "TCP",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "80",
+                    "sourceAddressPrefix": "184.58.95.66",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 110,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "defaultSecurityRules": [
+            {
+                "name": "AllowVnetInBound",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/defaultSecurityRules/AllowVnetInBound",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowAzureLoadBalancerInBound",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "AzureLoadBalancer",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllInBound",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/defaultSecurityRules/DenyAllInBound",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowVnetOutBound",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/defaultSecurityRules/AllowVnetOutBound",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowInternetOutBound",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/defaultSecurityRules/AllowInternetOutBound",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "Internet",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllOutBound",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/ELKStack-nsg/defaultSecurityRules/DenyAllOutBound",
+                "etag": "W/\"e150043d-dac7-4db0-b601-f60885527521\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "networkInterfaces": [
+            {
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/elkstack445"
+            }
+        ]
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "name": "RedTeamVnet",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/virtualNetworks/RedTeamVnet",
+    "etag": "W/\"ebcfe694-1534-4b80-8eca-cc7d13cf4af4\"",
+    "type": "Microsoft.Network/virtualNetworks",
+    "location": "eastus",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "c937ea2a-dfa1-4e22-bc8f-0b9fde713ab6",
+        "addressSpace": {
+            "addressPrefixes": [
+                "10.0.0.0/16"
+            ]
+        },
+        "subnets": [
+            {
+                "name": "default",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/virtualNetworks/RedTeamVnet/subnets/default",
+                "etag": "W/\"ebcfe694-1534-4b80-8eca-cc7d13cf4af4\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefix": "10.0.0.0/24",
+                    "networkSecurityGroup": {
+                        "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkSecurityGroups/RedTeamNSG"
+                    },
+                    "ipConfigurations": [
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/jump-box-provisioner845/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-1935/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-2492/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-1959/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-2448/ipConfigurations/ipconfig1"
+                        },
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/web-3403/ipConfigurations/ipconfig1"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            }
+        ]
+    }
+}

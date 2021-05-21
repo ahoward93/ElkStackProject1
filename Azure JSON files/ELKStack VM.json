@@ -1,0 +1,89 @@
+{
+    "name": "ELKStack",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/virtualMachines/ELKStack",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "southcentralus",
+    "properties": {
+        "vmId": "66603572-5dcf-4820-abab-8217a4049c83",
+        "hardwareProfile": {
+            "vmSize": "Standard_D2s_v3"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "Canonical",
+                "offer": "UbuntuServer",
+                "sku": "18.04-LTS",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "ELKStack_disk1_1e2b138ae4cc4da9a477cb83c0d1d5b4",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/disks/ELKStack_disk1_1e2b138ae4cc4da9a477cb83c0d1d5b4"
+                }
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "ELKStack",
+            "adminUsername": "azadmin",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": true,
+                "ssh": {
+                    "publicKeys": [
+                        {
+                            "path": "/home/azadmin/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDx8NDNI1ri9HzhCdGY+e5CdHRmOVFWLbKr7gizH+NbBafBkSioGGy63lm7Bs7vYdALU42mPLO2+yIQuHU9CUjS6FDf9mbF3ej4aM/AdrbpRwFG2AR3tHbbDFVLTJArAAwt6cxf+DLyfJRLYoeAaG+EX+pibrm4fYCVhW3+2LjAf5mhVPA00zpPUmdpvZ0zAp6dLd9UZFlyYv0nI5bpYosIks7ZdxZfzdHM7hve3CjrHl7TIiPcmIYwyb3yFeVuF3ZIOi6d2aO/AU1ub9jU2jzwH2Gt+LqrhFYhI5mFqrJt0hZMfls9D3Y4iZzCyZ2g8GCnqe3Ga6De1vw9zcmWCHnH root@4118e66316fa"
+                        }
+                    ]
+                }
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/elkstack445"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    },
+    "resources": [
+        {
+            "name": "AzureNetworkWatcherExtension",
+            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/virtualMachines/ELKStack/extensions/AzureNetworkWatcherExtension",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "southcentralus",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.Azure.NetworkWatcher",
+                "type": "NetworkWatcherAgentLinux",
+                "typeHandlerVersion": "1.4",
+                "settings": {}
+            }
+        },
+        {
+            "name": "enablevmaccess",
+            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/virtualMachines/ELKStack/extensions/enablevmaccess",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "southcentralus",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "VMAccessForLinux",
+                "typeHandlerVersion": "1.4",
+                "settings": {}
+            }
+        }
+    ]
+}

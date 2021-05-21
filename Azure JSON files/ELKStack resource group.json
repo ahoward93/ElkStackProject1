@@ -1,0 +1,9 @@
+{
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/ELKStack",
+    "name": "ELKStack",
+    "location": "southcentralus",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded"
+    }
+}

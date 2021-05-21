@@ -1,0 +1,61 @@
+{
+    "name": "Jump-Box-Provisioner",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/virtualMachines/Jump-Box-Provisioner",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "eastus",
+    "properties": {
+        "vmId": "6e9e1ced-0c1d-4977-9de8-12a257073fcb",
+        "hardwareProfile": {
+            "vmSize": "Standard_B1s"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "Canonical",
+                "offer": "UbuntuServer",
+                "sku": "18.04-LTS",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "Jump-Box-Provisioner_OsDisk_1_3cecb46eb0d7445a9def223fec7be3fb",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/REDTEAM/providers/Microsoft.Compute/disks/Jump-Box-Provisioner_OsDisk_1_3cecb46eb0d7445a9def223fec7be3fb"
+                },
+                "diskSizeGB": 30
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "Jump-Box-Provisioner",
+            "adminUsername": "azadmin",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": true,
+                "ssh": {
+                    "publicKeys": [
+                        {
+                            "path": "/home/azadmin/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5+pJn+tohLnBS9n90fmZsbPXYUl6Lk92U2RAVvH038RHkr19nxln31k2puvJblr23Kmg7aYADajyzlOwSusJJfV7p1qcrAyUtxUVCPcN4EjSjOFMIJW8789PDK40N7YWaFzcUDfdLXH1LKa62WVutzWJK4bBMZiGe3S63xvgGbrliH9Q9PwvOqgfLfY9enoTB45KMq6Hca3uSHeVR6xbLIOUGVjFet4oTBIvBn2T4yxrMiGnxQyG8sWY4AN9gWBRPblWHJstxdL61U8w1qPfPmkUIGkTpbkThp5b/N4qC5RU2OhyHWwaRhsS+4/w2JCHEkfxNBxc/2N/FJM4wyirkhbB9gKS9l50vVO28BjEFTuaZGCPxjyGZX1SZHjKprxqkplPHbylmJlZzJ2MwtnqljQWoOLEOkCgXXZSXywSP2yK4IOqYuKc7lj/9USJerlT1DsFQpE/BUtClGML+PUoH8dLSHVAY5TbnffcC/w3PFwlF7f8wSdmbsMXzJlIYCSc= Abby@DESKTOP-89PL6RN"
+                        }
+                    ]
+                }
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/jump-box-provisioner845"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    }
+}

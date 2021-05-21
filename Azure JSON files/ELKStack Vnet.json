@@ -1,0 +1,34 @@
+{
+    "name": "ELKStackVnet",
+    "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/virtualNetworks/ELKStackVnet",
+    "etag": "W/\"34707638-7da6-4563-bec5-ce31d4508b64\"",
+    "type": "Microsoft.Network/virtualNetworks",
+    "location": "southcentralus",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "7d488cb2-7cb5-4f15-af84-7e110a80824a",
+        "addressSpace": {
+            "addressPrefixes": [
+                "10.2.0.0/16"
+            ]
+        },
+        "subnets": [
+            {
+                "name": "ElkStackSubnet",
+                "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/virtualNetworks/ELKStackVnet/subnets/ElkStackSubnet",
+                "etag": "W/\"34707638-7da6-4563-bec5-ce31d4508b64\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefix": "10.2.0.0/24",
+                    "ipConfigurations": [
+                        {
+                            "id": "/subscriptions/bfc470a3-91b9-4f3a-a4cd-ed76f418442e/resourceGroups/RedTeam/providers/Microsoft.Network/networkInterfaces/elkstack445/ipConfigurations/ipconfig1"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            }
+        ]
+    }
+}
