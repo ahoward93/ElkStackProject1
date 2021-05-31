@@ -38,7 +38,7 @@ Filebeat-Config is used in Filebeat playbook. Make changes to line number 1105 &
  
 Metricbeat-config is used in Metricbeat playbook.  Make changes to line 62 & 94 save in container on jump box /etc/ansible/files/metircbeat-config.yml
  
-[6_metricbeat_config.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/6_metricbeat_config.yml)
+[6_metricbeat_config.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/6_Metricbeat-Config.yml)
  
 
 This document contains the following details:
