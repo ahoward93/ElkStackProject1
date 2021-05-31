@@ -4,9 +4,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-ELK Stack diagram from Azure Topology showing all components of the cloud setup
-<img width="913" alt="ELKStack_Diagram" src="https://user-images.githubusercontent.com/76796692/118374123-659e8780-b588-11eb-82a5-9a199170fb83.PNG">
->
+
 
  ELK Network Diagram
  ![](https://user-images.githubusercontent.com/76796692/119214854-ed5c2880-ba97-11eb-902a-b33996353481.png)
