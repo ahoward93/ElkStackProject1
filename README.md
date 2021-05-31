@@ -34,7 +34,7 @@ Playbook 4 is used to download, install, configure and start meticbeat on the we
 
 Filebeat-Config is used in Filebeat playbook. Make changes to line number 1105 & 1805 save in container on jump box /etc/ansible/files/filebeat-config.yml
  
-[5_filebeat-config.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/5_filebeat-config.yml)
+[5_filebeat-config.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/5_Filebeat-Config.yml)
  
 Metricbeat-config is used in Metricbeat playbook.  Make changes to line 62 & 94 save in container on jump box /etc/ansible/files/metircbeat-config.yml
  
