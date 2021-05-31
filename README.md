@@ -22,7 +22,7 @@ Playbook one is used to install docker, apache, python, and docker container DVW
   
 Playbook two is used to configure the ELKVM with docker, python, and docker container module sebp/elk:761
 
-[2_ELKInstall-playbook.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files2_ELKInstall-playbook.yml)
+[2_ELKInstall-playbook.yml](https://github.com/ahoward93/ElkStackProject1/blob/main/Ansible%20Files/2_ELKInstall-playbook)
     
 Playbook 3 is used to download, install, configure and start filebeat on the webserver VMs 
 
